@@ -3,7 +3,8 @@ const express = require('express');
 
 const { animals} = require('./data/animals.json');
 
-app = express();
+const PORT = process.env.PORT ||3001;
+ const app = express();
 
 // creating a function called filterByQuery() to handle different kinda query
 //  we will start extracting data after ?
@@ -81,7 +82,7 @@ app.get('/api/animals',(req,res)=>{
 
 
 //Adding listen method to the server to listen request 
-app.listen(3001,()=>{
-    console.log(`API server now on port 3001`);
+app.listen(PORT,()=>{
+    console.log(`API server now on port ${PORT}`);
 });
 
